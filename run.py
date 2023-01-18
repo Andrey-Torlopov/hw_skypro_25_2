@@ -24,9 +24,11 @@ app.register_blueprint(post_blueprint)
 app.register_blueprint(userfeed_blueprint)
 app.register_blueprint(api_blueprint)
 
+
 @app.errorhandler(404)
 def not_found(e):
   return render_template("404.html")
+
 
 @app.errorhandler(500)
 def not_found(e):
@@ -34,7 +36,4 @@ def not_found(e):
 
 
 if __name__ == "__main__":
-    app.debug = True
-    app.run()
-
-
+    app.run(port=25000)
